@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Calculadora2</title>
+
+
+
+
+        <style>
+
+            .calculadora{
+                position:absolute;
+                transform: translate(50%, 50%);
+                right: 50%;
+                width: 320px;
+                height: 410px;
+                background: grey;
+                box-shadow: 0 0 15px red;
+                border-radius: 10px;
+
+            }
+
+            .painel{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 10px;
+                width: 93%;
+                height: 70px;
+                margin: 10px;
+                background: #b5adad;
+                border-radius: 10px;
+
+            }
+            .btn1{
+                position: absolute;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                top: 30%;
+                left: 4%;
+
+            }
+
+            .btn2{
+                position: absolute;
+                top: 30%;
+                right: 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+            }
+
+            button.ui-button {
+                padding: 0px 10px;
+            }
+            
+            
+            
+            
+            
+            .icon{
+                position: absolute;
+               bottom: 6%;
+               left: 10%;
+               
+                   
+            }
+        </style>
+
+
+
+    </h:head>
+    <h:body> 
+
+
+
+
+        <div class = "calculadora " >
+            <h:form> 
+                <div class="painel">
+                    <p:outputLabel   value="#{mostrar.tela}" id="tela"  style="font-size:2rem; padding-left: 2%" />
+                </div>
+
+                <div class="btn1">
+                    <p:commandButton value="0" actionListener="#{mostrar.AddNumero(0)}" update="tela" />
+                    <p:commandButton value="1" actionListener="#{mostrar.AddNumero(1)}" update="tela" />
+                    <p:commandButton value="2" actionListener="#{mostrar.AddNumero(2)}" update="tela" />
+                    <p:commandButton value="3" actionListener="#{mostrar.AddNumero(3)}" update="tela" />
+                    <p:commandButton value="4" actionListener="#{mostrar.AddNumero(4)}" update="tela" />
+                    <p:commandButton value="5" actionListener="#{mostrar.AddNumero(5)}" update="tela" />
+                    <p:commandButton value="6" actionListener="#{mostrar.AddNumero(6)}" update="tela" />
+                    <p:commandButton value="7" actionListener="#{mostrar.AddNumero(7)}" update="tela" />
+                    <p:commandButton value="8" actionListener="#{mostrar.AddNumero(8)}" update="tela" />
+                    <p:commandButton value="9" actionListener="#{mostrar.AddNumero(9)}" update="tela" />
+                  <p:commandButton value="=" actionListener="#{mostrar.calcular}" update="tela" style="background: red" />
+
+                </div>
+
+                <div class="btn2">
+                    <p:commandButton value="+" actionListener="#{mostrar.AddOperacao('+')}" update="tela" />
+                    <p:commandButton value="-" actionListener="#{mostrar.AddOperacao('-')}" update="tela" />
+                    <p:commandButton value="*" actionListener="#{mostrar.AddOperacao('*')}" update="tela" />
+                    <p:commandButton value="/" actionListener="#{mostrar.AddOperacao('/')}" update="tela" />
+                    <p:commandButton value="C" actionListener="#{mostrar.limpar}" update="tela" />
+                </div>
+                <span class="icon"><i class=" pi pi-calculator" style="font-size: 2rem; margin: 1rem;"></i><i class=" pi pi-prime"    style="font-size: 2rem"></i></span>
+            </h:form>   
+        </div>
+        
+        
+        
+    </h:body>
+</html>
